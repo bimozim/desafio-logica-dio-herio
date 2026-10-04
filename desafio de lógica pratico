@@ -1,0 +1,50 @@
+class Heroi {
+    private String nome;
+    private int idade;
+    private String tipo;
+
+    public Heroi(String nome, int idade, String tipo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.tipo = tipo;
+    }
+
+    public void atacar() {
+        String ataque;
+
+        switch (tipo) {
+            case "mago":
+                ataque = "magia";
+                break;
+            case "guerreiro":
+                ataque = "espada";
+                break;
+            case "monge":
+                ataque = "artes marciais";
+                break;
+            case "ninja":
+                ataque = "shuriken";
+                break;
+            default:
+                System.out.println("Tipo de herói inválido.");
+                return;
+        }
+
+        System.out.println("o " + tipo + " atacou usando " + ataque);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Heroi[] herois = {
+            new Heroi("Merlin", 80, "mago"),
+            new Heroi("Arthur", 30, "guerreiro"),
+            new Heroi("Li", 45, "monge"),
+            new Heroi("Hanzo", 25, "ninja")
+        };
+
+        for (Heroi heroi : herois) {
+            heroi.atacar();
+        }
+    }
+}
